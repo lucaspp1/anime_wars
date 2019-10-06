@@ -28,6 +28,15 @@ namespace dotnet_core.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            List<string> usuarios = new List<string>() { "Lucas", "Amanda" } ;
+            List<string> emails = new List<string>() { "Lucas@gmail", "Amanda@gmail" } ;
+            ViewData["usuarios"] = usuarios;
+            ViewData["emails"] = emails;
+            return View(usuarios);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

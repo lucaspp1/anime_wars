@@ -1,0 +1,46 @@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+  List<string> usuarioNome = (List<string>) ViewData["usuarios"];
+  List<string> usuarioEmail = (List<string>) ViewData["emails"];
+}
+
+
+<div class="container">
+    <div class="row" >
+        <div class="col-12 col-lg-2 border">
+            Menu lateral
+        </div>
+        <div class="col-12 col-lg-10">
+            <div class="row">
+                <div class="col-6 col-lg-12 border"> 
+                    Menu Superior
+                </div>
+                <div class="col-6 col-lg-12 border"> 
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(int i=0; i<usuarioNome.Count; i++){
+                                <tr>
+                                    <td>
+                                        @usuarioNome[i]
+                                    </td>
+                                    <td>
+                                        @usuarioEmail[i]
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
